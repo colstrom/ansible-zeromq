@@ -1,1 +1,11 @@
 ---
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - libzmq3
+    - libzmq3-dev
+  tags:
+    - software-installation
+    - using-apt
